@@ -1,18 +1,15 @@
-# vue-plugins
+vue-plugins
+-----------------
+STI开发的组件集合
 
-> A Vue.js project
-
-## Build Setup
-
+## 1. 开发步骤
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+#  进入开发模式，访问地址http://localhost:8080
 npm run dev
 
-# build for production with minification
+# 进行生产模式
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
