@@ -1,7 +1,4 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-new Vue({
-  el: 'body',
-  components: { App }
-})
+export const app = Vue.extend(App)

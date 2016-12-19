@@ -1,12 +1,16 @@
 var path = require('path')
-var webpack = require('webpack')
+var webpack = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.js',
+    chunkFilename : '[id].bundle.js',
+    //  umd包含了对amd、commonjs、var等多种规范的支持
+    libraryTarget : 'amd'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
@@ -44,7 +48,25 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
-  devtool: '#eval-source-map'
+  externals: {
+        'vue'    : 'vue'
+    },
+  devtool: '#eval-source-map',
+  plugins: [
+        new HtmlWebpackPlugin({
+            title : 'Webpack Hot Reload Template',
+            filename : 'index.html',
+            inject : 'body',
+            template: 'template.ejs',
+            links: [{
+                href : 'node_modules/bootstrap/dist/css/bootstrap.css',
+                rel : 'stylesheet'
+            }],
+            scripts: [
+                'node_modules/vue/dist/vue.js'
+            ]
+        }),
+    ]
 }
 
 if (process.env.NODE_ENV === 'production') {
