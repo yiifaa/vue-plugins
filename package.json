@@ -4,7 +4,8 @@
   "author": "yiifaa",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "jsdoc": "jsdoc -u tutorials -c jsdoc.json -P package.json --readme README.md"
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",

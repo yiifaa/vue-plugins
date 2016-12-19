@@ -2,10 +2,12 @@
   <div id="app">
     <h1>{{ msg }}</h1>
   </div>
+  <validator></validator>
 </template>
 
 <script>
 import $ from 'jquery'
+import validator from './validator.js'
 export default {
   data () {
     return {
@@ -15,6 +17,10 @@ export default {
 
   ready () {
     $('h1', this.$el).css({color : 'blue'})
+  },
+
+  components : {
+    validator
   }
 }
 </script>
