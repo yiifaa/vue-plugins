@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <button class="btn btn-default">Hello</button>
   </div>
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   data () {
     return {
       msg: 'Hello, Vue!'
     }
+  },
+
+  ready () {
+    $('h1', this.$el).css({color : 'blue'})
   }
 }
 </script>

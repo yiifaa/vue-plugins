@@ -10,7 +10,7 @@ module.exports = {
     filename: 'build.js',
     chunkFilename : '[id].bundle.js',
     //  umd包含了对amd、commonjs、var等多种规范的支持
-    libraryTarget : 'amd'
+    libraryTarget : 'var'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
@@ -49,7 +49,8 @@ module.exports = {
     noInfo: true
   },
   externals: {
-        'vue'    : 'vue'
+        'vue'    : 'Vue',
+        'jquery':'jQuery'
     },
   devtool: '#eval-source-map',
   plugins: [
