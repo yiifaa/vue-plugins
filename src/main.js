@@ -1,10 +1,18 @@
+/**
 import Vue from 'vue'
-import App from './App.vue'
 import $ from 'jquery'
-
-let app= Vue.extend(App)
-
-new app({
-  replace : false,
-  el : 'body'
+*/
+import appRoot from './root.js'
+/**
+$('#btnShow').on('click', function() {
+    var al = $('.alert');
+    if(al.is(':hidden')) {
+        al.show()
+    } else {
+        al.hide(); 
+    }
+})
+**/
+new appRoot({
+    el : '#appRoot'
 })
