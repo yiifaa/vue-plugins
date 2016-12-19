@@ -1,0 +1,10 @@
+{
+    "validator": {
+        "title" : "表单校验插件",
+        "children": {
+            "valid-rule" : {
+                "title" : "表单元素校验组件"
+            }
+        }
+    }
+}
