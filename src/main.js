@@ -2,17 +2,16 @@
 import Vue from 'vue'
 import $ from 'jquery'
 */
-import appRoot from './root.js'
+import appRoot from './root'
+import {validator} from 'plugins'
+import Vue from 'vue'
 /**
-$('#btnShow').on('click', function() {
-    var al = $('.alert');
-    if(al.is(':hidden')) {
-        al.show()
-    } else {
-        al.hide(); 
-    }
-})
-**/
-new appRoot({
-    el : '#appRoot'
-})
+ * @function
+ * @desc 初始化应用程序，此方法主要用于测试，请勿调用
+ */
+ export function init() {
+   Vue.use(validator)
+   new appRoot({
+       el : '#appRoot'
+   })
+ }

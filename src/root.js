@@ -3,22 +3,27 @@ import Vue from 'vue'
 import $ from 'jquery'
 
 let AppRoot = Vue.extend({
+
     template,
-    
+
     data () {
         return {
             shown : true
-        }    
+        }
     },
-    
+
     computed : {
         message () {
             return this.shown ? '隐藏' : '显示'
         }
     },
-    
+
+    ready () {
+      //$('form', this.$el).validate()
+    },
+
     methods : {
-        
+
         toggle () {
             this.shown = !this.shown
             $('.col-xs-4:first', this.$el).css({
@@ -33,7 +38,7 @@ let AppRoot = Vue.extend({
             }
             **/
         }
-        
+
     }
 })
 

@@ -3,14 +3,17 @@ var webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main : ['./src/main.js'],
+    'sti-plugins' : ['./src/plugins.js']
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js',
-    chunkFilename : '[id].bundle.js',
+    filename: '[name].js',
+    chunkFilename : '[id].[name].js',
     //  umd包含了对amd、commonjs、var等多种规范的支持
-    libraryTarget : 'var'
+    libraryTarget : 'amd'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
@@ -48,10 +51,18 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
+  resolve : {
+    //  除了这些类型的文件，其他类型的文件必须加上后缀名
+    extensions : ['', '.js', '.vue'],
+    alias : {
+      'validation' : 'jquery-validation/dist'
+    }
+  },
   externals: {
-        'vue'    : 'Vue',
-        'jquery':'jQuery'
-    },
+    'vue'    : 'vue',
+    'jquery': 'jquery',
+    'plugins' : 'sti-plugins'
+  },
   devtool: '#eval-source-map',
   plugins: [
         new HtmlWebpackPlugin({

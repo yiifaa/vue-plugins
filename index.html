@@ -12,8 +12,23 @@
            </div>
            <button class="btn btn-primary" id="btnShow">显示/隐藏</button>
        </div>
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/vue/dist/vue.js"></script>
-    <script src="/dist/build.js"></script>
+    <script src="node_modules/requirejs/require.js"></script>
+    <script>
+      require.config({
+        baseUrl : './dist',
+        packages : [{
+          name: 'jquery',
+          location: '../node_modules/jquery/dist',
+          main: 'jquery'
+        }, {
+          name: 'vue',
+          location: '../node_modules/vue/dist',
+          main: 'vue'
+        }]
+      })
+      require(['main'], function(app) {
+        app.init()
+      })
+    </script>
   </body>
 </html>

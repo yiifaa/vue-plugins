@@ -9,5 +9,10 @@
             <button class="btn btn-primary" @click="toggle" v-text="message"></button>
         </div>
     </div>
-    
+  <validator form="#userForm">
+    <form id="userForm" class="" action="index.html" method="post">
+        <input type="text" name="username" required value="">
+        <button class="btn btn-primary">Save</button>
+    </form>
+  </validator>
 </div>

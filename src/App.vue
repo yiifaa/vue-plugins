@@ -1,13 +1,19 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
+    <form class="" action="index.html" method="post">
+        <input type="text" name="username" required value="">
+        <button class="btn btn-primary">Save</button>
+    </form>
   </div>
-  <validator></validator>
+
 </template>
 
 <script>
 import $ from 'jquery'
-import validator from './validator.js'
+import 'validation/additional-methods'
+import 'validation/localization/message_zh'
+
 export default {
   data () {
     return {
@@ -17,10 +23,7 @@ export default {
 
   ready () {
     $('h1', this.$el).css({color : 'blue'})
-  },
-
-  components : {
-    validator
+    $('form', this.$el).validation()
   }
 }
 </script>
