@@ -1,6 +1,7 @@
 import template from './root.html'
 import Vue from 'vue'
 import $ from 'jquery'
+import animate from './animate'
 
 let AppRoot = Vue.extend({
 
@@ -10,6 +11,10 @@ let AppRoot = Vue.extend({
         return {
             shown : true
         }
+    },
+
+    components : {
+        animate
     },
 
     computed : {

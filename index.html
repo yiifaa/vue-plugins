@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>vue-plugins</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
   </head>
   <body>
        <div class="container" id="appRoot">
@@ -24,6 +25,10 @@
           name: 'vue',
           location: '../node_modules/vue/dist',
           main: 'vue'
+        }, {
+          name : 'd3',
+          location : '../node_modules/d3/build',
+          main : 'd3'
         }]
       })
       require(['main'], function(app) {

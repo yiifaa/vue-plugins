@@ -13,9 +13,7 @@ export default {
 
   template,
 
-  props :
-
-  {
+  props : {
       /**
        * 需要校验的表单，目前只支持校验表单，也就是说，所有的校验内容必须放在表单中
        * @memberof Validator.prototype

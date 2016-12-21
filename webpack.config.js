@@ -61,7 +61,8 @@ module.exports = {
   externals: {
     'vue'    : 'vue',
     'jquery': 'jquery',
-    'plugins' : 'sti-plugins'
+    'plugins' : 'sti-plugins',
+    'd3' : 'd3'
   },
   devtool: '#eval-source-map',
   plugins: [
